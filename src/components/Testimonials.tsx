@@ -1,65 +1,63 @@
-
 'use client';
 
-import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Quote, Star } from 'lucide-react';
+import Image from 'next/image';
 
 const testimonials = [
     {
-        name: "Nguyễn Văn A",
-        role: "CEO, TechStart",
-        content: "Dịch vụ tuyệt vời! Doanh thu của chúng tôi tăng 200% sau khi làm lại website. Giao diện rất chuyên nghiệp và dễ sử dụng.",
-        avatar: "A"
+        name: "Chị Minh Anh",
+        role: "Cư dân Vinhomes Smart City",
+        content: "Mình rất kỹ tính nhưng khi nhận nhà thì hoàn toàn bị chinh phục. Đội ngũ thi công rất sạch sẽ, các đường keo silicon sắc nét. 10 điểm cho sự tận tâm!",
+        avatar: "/images/file.svg" // Placeholder or skip visual avatar
     },
     {
-        name: "Trần Thị B",
-        role: "Marketing Manager",
-        content: "Tôi ấn tượng với cách team tư vấn và triển khai. Mọi thứ đều đúng tiến độ và vượt mong đợi.",
-        avatar: "B"
+        name: "Anh Tuấn Hưng",
+        role: "Penthouse Ecopark",
+        content: "Thiết kế 3D đã đẹp, ra thực tế còn đẹp hơn vì chất cảm của vật liệu. Xưởng gỗ làm việc rất chuyên nghiệp, đúng tiến độ cam kết.",
+        avatar: "/images/file.svg"
     },
     {
-        name: "Le Hoang C",
-        role: "Founder, CoffeeChain",
-        content: "Giải pháp công nghệ giúp chúng tôi quản lý chuỗi cửa hàng hiệu quả hơn bao giờ hết. Rất đáng tiền!",
-        avatar: "C"
+        name: "Cô Thanh",
+        role: "Biệt thự KĐT Ciputra",
+        content: "Cách các bạn tối ưu không gian bếp và phòng thay đồ làm cô rất ưng ý. Chắc chắn sẽ giới thiệu cho bạn bè.",
+        avatar: "/images/file.svg"
     }
 ];
 
 export default function Testimonials() {
     return (
-        <section id="testimonials" className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
+        <section className="py-20 bg-stone-50 dark:bg-stone-900" id="testimonials">
             <div className="container mx-auto px-4">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">
-                        Khách hàng nói gì về chúng tôi
-                    </h2>
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Khách hàng nói gì?</h2>
+                    <p className="text-stone-600 dark:text-stone-400">Sự hài lòng của bạn là thước đo thành công của chúng tôi</p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {testimonials.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-2xl bg-white dark:bg-black border border-zinc-100 dark:border-zinc-800 shadow-sm"
+                            className="bg-white dark:bg-black p-8 rounded-2xl shadow-sm relative"
                         >
-                            <div className="flex gap-1 mb-6">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                                ))}
+                            <Quote className="absolute top-8 right-8 text-stone-200 dark:text-stone-800 w-12 h-12 rotate-180" />
+                            <div className="flex gap-1 text-orange-400 mb-6">
+                                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                             </div>
-                            <p className="text-zinc-600 dark:text-zinc-300 mb-8 italic">
+                            <p className="text-stone-600 dark:text-stone-300 mb-6 leading-relaxed italic">
                                 "{item.content}"
                             </p>
                             <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center font-bold text-blue-700 dark:text-blue-300">
-                                    {item.avatar}
+                                <div className="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-stone-500 text-sm">
+                                    {item.name.charAt(0)}
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-zinc-900 dark:text-zinc-100 text-sm">{item.name}</h4>
-                                    <p className="text-xs text-zinc-500">{item.role}</p>
+                                    <h4 className="font-bold text-stone-900 dark:text-white">{item.name}</h4>
+                                    <span className="text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wide">{item.role}</span>
                                 </div>
                             </div>
                         </motion.div>

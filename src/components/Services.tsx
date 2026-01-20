@@ -1,87 +1,58 @@
-
 'use client';
 
-import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { PenTool, Hammer, RefreshCw, ArrowRight } from 'lucide-react';
 
-const packages = [
+const services = [
     {
-        name: "Cơ bản",
-        price: "10tr",
-        desc: "Dành cho cá nhân hoặc Startup nhỏ.",
-        features: ["Landing Page 1 trang", "Thiết kế chuẩn Mobile", "Tối ưu SEO cơ bản", "Hỗ trợ 1 tháng"]
+        icon: PenTool,
+        title: "Thiết kế & Thi công trọn gói",
+        desc: "Giải pháp đồng bộ từ ý tưởng đến hiện thực. Tiết kiệm thời gian và chi phí cho gia chủ.",
+        href: "#"
     },
     {
-        name: "Nâng cao",
-        price: "25tr",
-        popular: true,
-        desc: "Dành cho doanh nghiệp đang tăng trưởng.",
-        features: ["Website 5-7 trang", "CMS quản trị nội dung", "Tối ưu tốc độ tải trang", "Tích hợp Analytics", "Hỗ trợ 3 tháng"]
+        icon: Hammer,
+        title: "Sản xuất nội thất lẻ",
+        desc: "Cung cấp Sofa, Giường, Tủ bếp,... may đo theo kích thước và yêu cầu riêng.",
+        href: "#"
     },
     {
-        name: "Toàn diện",
-        price: "50tr+",
-        desc: "Giải pháp thiết kế riêng biệt.",
-        features: ["Thiết kế UI/UX độc quyền", "Tính năng phức tạp (E-com, booking)", "Bảo mật nâng cao", "Hỗ trợ 24/7", "Bảo hành trọn đời"]
+        icon: RefreshCw,
+        title: "Cải tạo không gian cũ",
+        desc: "F5 lại diện mạo căn nhà. Phá dỡ, xây trát và làm mới nội thất toàn diện.",
+        href: "#"
     }
 ];
 
 export default function Services() {
     return (
-        <section id="process" className="py-24 bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+        <section className="py-20 bg-white dark:bg-black" id="services">
             <div className="container mx-auto px-4">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">
-                        Bảng giá dịch vụ
-                    </h2>
-                    <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                        Chi phí minh bạch, không phát sinh. Chọn gói phù hợp nhất với nhu cầu của bạn.
-                    </p>
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Giải pháp trọn gói</h2>
+                    <p className="text-stone-600 dark:text-stone-400">Đáp ứng mọi nhu cầu về không gian sống của bạn</p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {packages.map((pkg, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className={`relative p-8 rounded-2xl bg-white dark:bg-black border flex flex-col ${pkg.popular
-                                    ? 'border-blue-500 ring-2 ring-blue-500/20 shadow-xl'
-                                    : 'border-zinc-200 dark:border-zinc-800'
-                                }`}
+                            className="bg-stone-50 dark:bg-stone-900 p-8 rounded-2xl group hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
                         >
-                            {pkg.popular && (
-                                <span className="absolute top-0 right-0 -mt-3 mr-4 px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full shadow-lg">
-                                    Phổ biến nhất
-                                </span>
-                            )}
-
-                            <div className="mb-6">
-                                <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">{pkg.name}</h3>
-                                <div className="flex items-baseline gap-1">
-                                    <span className="text-4xl font-extrabold text-zinc-900 dark:text-white">{pkg.price}</span>
-                                    <span className="text-zinc-500">/dự án</span>
-                                </div>
-                                <p className="text-sm text-zinc-500 mt-2">{pkg.desc}</p>
+                            <div className="w-16 h-16 bg-white dark:bg-stone-800 dark:group-hover:bg-stone-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:shadow-md transition-all">
+                                <service.icon className="w-8 h-8 text-stone-900 dark:text-white" strokeWidth={1.5} />
                             </div>
-
-                            <ul className="space-y-4 mb-8 flex-1">
-                                {pkg.features.map((feat, i) => (
-                                    <li key={i} className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-300">
-                                        <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                                        {feat}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <button className={`w-full py-3 rounded-lg font-semibold transition-all ${pkg.popular
-                                    ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/25'
-                                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white hover:bg-zinc-200 dark:hover:bg-zinc-700'
-                                }`}>
-                                Chọn gói này
-                            </button>
+                            <h3 className="text-2xl font-bold mb-4 text-stone-900 dark:text-white">{service.title}</h3>
+                            <p className="text-stone-600 dark:text-stone-400 mb-8 leading-relaxed">
+                                {service.desc}
+                            </p>
+                            <a href={service.href} className="inline-flex items-center text-sm font-bold text-stone-900 dark:text-white hover:underline gap-2">
+                                Xem chi tiết <ArrowRight className="w-4 h-4" />
+                            </a>
                         </motion.div>
                     ))}
                 </div>

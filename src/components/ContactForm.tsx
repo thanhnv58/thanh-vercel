@@ -1,49 +1,81 @@
-
 'use client';
 
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function ContactForm() {
-    const [status, setStatus] = useState<string>('');
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('Message sent!');
-        // Add logic to use src/lib/ configs here later
-    };
-
     return (
-        <section id="contact" className="py-24 px-4 bg-zinc-50 dark:bg-zinc-900/50">
-            <div className="max-w-md mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-8">Get in Touch</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
+        <section className="py-20 bg-stone-900 text-white" id="contact">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    {/* Offer Content */}
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            className="w-full px-4 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black focus:ring-2 focus:ring-blue-500 outline-none transition-all"
-                            placeholder="you@example.com"
-                            required
-                        />
+                        <span className="inline-block py-1 px-3 rounded-full bg-orange-500/20 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/30">
+                            🎁 Ưu đãi đặc biệt
+                        </span>
+                        <h2 className="text-4xl lg:text-5xl font-bold font-serif mb-6 leading-tight">
+                            Nhận ngay bộ bản vẽ 3D <br />
+                            <span className="text-orange-500">trị giá 10 triệu đồng</span>
+                        </h2>
+                        <p className="text-stone-400 mb-8 text-lg leading-relaxed">
+                            Khi ký hợp đồng thi công trọn gói trong tháng này. Hãy để lại thông tin, kiến trúc sư trưởng sẽ liên hệ tư vấn trực tiếp cho bạn trong vòng 30 phút.
+                        </p>
+
+                        <div className="flex gap-8 border-t border-stone-800 pt-8">
+                            <div>
+                                <h4 className="font-bold text-2xl mb-1">500+</h4>
+                                <span className="text-stone-500 text-sm">Dự án hoàn thành</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-2xl mb-1">98%</h4>
+                                <span className="text-stone-500 text-sm">Hài lòng tuyệt đối</span>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                        <textarea
-                            id="message"
-                            className="w-full px-4 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black focus:ring-2 focus:ring-blue-500 outline-none transition-all min-h-[120px]"
-                            placeholder="How can we help?"
-                            required
-                        ></textarea>
+
+                    {/* Simple Form */}
+                    <div className="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h3 className="text-2xl font-bold text-stone-900 mb-6 font-serif">Đăng lý tư vấn miễn phí</h3>
+                        <form className="space-y-4">
+                            <div>
+                                <label className="block text-sm font-medium text-stone-700 mb-1">Họ và tên</label>
+                                <input
+                                    type="text"
+                                    placeholder="Ví dụ: Nguyễn Văn A"
+                                    className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:outline-none text-stone-900 placeholder:text-stone-400"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-stone-700 mb-1">Số điện thoại</label>
+                                <input
+                                    type="tel"
+                                    placeholder="0912 345 678"
+                                    className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:outline-none text-stone-900 placeholder:text-stone-400"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-stone-700 mb-1">Diện tích căn hộ (m2)</label>
+                                <input
+                                    type="number"
+                                    placeholder="Ví dụ: 85"
+                                    className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:outline-none text-stone-900 placeholder:text-stone-400"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-stone-700 mb-1">Nhu cầu cụ thể</label>
+                                <select className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:outline-none text-stone-900">
+                                    <option>Thiết kế & Thi công trọn gói</option>
+                                    <option>Thiết kế nội thất (Chưa thi công)</option>
+                                    <option>Cải tạo nhà cũ</option>
+                                    <option>Mua đồ nội thất lẻ</option>
+                                </select>
+                            </div>
+                            <button className="w-full py-4 bg-stone-900 text-white font-bold rounded-lg hover:bg-stone-800 transition-all shadow-lg mt-2">
+                                Gửi đăng ký ngay
+                            </button>
+                        </form>
                     </div>
-                    <button
-                        type="submit"
-                        className="w-full py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
-                    >
-                        Send Message
-                    </button>
-                    {status && <p className="text-center text-sm text-green-600 mt-2">{status}</p>}
-                </form>
+                </div>
             </div>
         </section>
     );

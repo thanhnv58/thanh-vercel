@@ -4,10 +4,10 @@ import { Phone, Facebook } from 'lucide-react';
 
 export default function Header() {
     const navItems = [
-        { name: 'Tính năng', href: '#features' },
+        { name: 'Dự án', href: '#portfolio' },
+        { name: 'Triết lý', href: '#values' },
+        { name: 'Dịch vụ', href: '#services' },
         { name: 'Quy trình', href: '#process' },
-        { name: 'Đánh giá', href: '#testimonials' },
-        { name: 'FAQ', href: '#faq' },
     ];
 
     return (
