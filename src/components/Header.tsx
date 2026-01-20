@@ -1,14 +1,60 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Facebook } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+    const pathname = usePathname();
+
     const navItems = [
-        { name: 'Dự án', href: '#portfolio' },
-        { name: 'Triết lý', href: '#values' },
-        { name: 'Dịch vụ', href: '#services' },
-        { name: 'Quy trình', href: '#process' },
+        { name: 'Dự án', href: '/#portfolio' },
+        { name: 'Triết lý', href: '/#values' },
+        { name: 'Dịch vụ', href: '/#services' },
+        { name: 'Quy trình', href: '/#process' },
     ];
+
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        // Only handle smooth scroll if we are on the homepage and linking to a hash
+        if (pathname === '/' && href.includes('#')) {
+            e.preventDefault();
+            const targetId = href.split('#')[1];
+            const elem = document.getElementById(targetId);
+            if (elem) {
+                const targetPosition = elem.getBoundingClientRect().top + window.scrollY;
+                // Header offset (approx 80px)
+                const offsetPosition = targetPosition - 80;
+
+                // Custom smooth scroll implementation
+                const startPosition = window.scrollY;
+                const distance = offsetPosition - startPosition;
+                const duration = 500; // 500ms duration (customizable speed)
+                let start: number | null = null;
+
+                const animation = (currentTime: number) => {
+                    if (start === null) start = currentTime;
+                    const timeElapsed = currentTime - start;
+                    const run = ease(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                };
+
+                // Quadratic easing in/out
+                const ease = (t: number, b: number, c: number, d: number) => {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                };
+
+                requestAnimationFrame(animation);
+
+                // Update URL without jump
+                window.history.pushState(null, '', href);
+            }
+        }
+    };
 
     return (
         <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/90 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-all duration-300">
@@ -33,6 +79,7 @@ export default function Header() {
                         <Link
                             key={item.href}
                             href={item.href}
+                            onClick={(e) => handleScroll(e, item.href)}
                             className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all hover:after:w-full"
                         >
                             {item.name}
@@ -55,7 +102,8 @@ export default function Header() {
 
                     {/* Primary CTA */}
                     <Link
-                        href="#contact"
+                        href="/#contact"
+                        onClick={(e) => handleScroll(e, '/#contact')}
                         className="flex items-center justify-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-blue-600/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
                     >
                         Nhận tư vấn ngay

@@ -9,18 +9,23 @@ const projects = [
         title: "Modern Luxury Living",
         category: "Phòng Khách",
         image: "/images/portfolio_living.png",
+        slug: "modern-luxury-living"
     },
     {
         title: "Cozy Master Bedroom",
         category: "Phòng Ngủ",
         image: "/images/portfolio_bedroom.png",
+        slug: "cozy-master-bedroom"
     },
     {
         title: "Minimalist Kitchen",
         category: "Phòng Bếp",
         image: "/images/portfolio_kitchen.png",
+        slug: "minimalist-kitchen"
     }
 ];
+
+import Link from 'next/link';
 
 export default function Portfolio() {
     return (
@@ -36,7 +41,7 @@ export default function Portfolio() {
                 {/* Project Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     {projects.map((project, index) => (
-                        <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/5] cursor-pointer">
+                        <Link href={`/poster/${project.slug}`} key={index} className="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/5] cursor-pointer block">
                             <Image
                                 src={project.image}
                                 alt={project.title}
@@ -48,7 +53,7 @@ export default function Portfolio() {
                                 <span className="text-stone-300 text-sm font-medium uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">{project.category}</span>
                                 <h3 className="text-white text-xl font-bold mt-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-200">{project.title}</h3>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
