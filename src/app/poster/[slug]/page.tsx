@@ -62,13 +62,8 @@ export default async function PosterPage(props: { params: Promise<{ slug: string
             <article className="flex-grow pt-32 pb-20">
                 <div className="container mx-auto px-4">
 
-                    {/* Breadcrumb / Back Link */}
-                    <div className="mb-8">
-                        <Link href="/" className="text-stone-500 hover:text-orange-600 transition-colors inline-flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
-                            Quay lại trang chủ
-                        </Link>
-                    </div>
+
+                    {/* Breadcrumb removed - Moved to Floating Action Button */}
 
                     {/* Header Section */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-end">
@@ -149,6 +144,17 @@ export default async function PosterPage(props: { params: Promise<{ slug: string
 
                 </div>
             </article>
+
+            {/* Floating Back Button (FAB) */}
+            <Link
+                href="/"
+                className="fixed bottom-8 left-8 z-50 flex items-center gap-2 bg-stone-900 hover:bg-black text-white px-6 py-3 rounded-full shadow-2xl shadow-stone-900/40 border border-stone-800 transition-all transform hover:scale-105 hover:-translate-y-1 group"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-1 transition-transform">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+                <span className="font-semibold tracking-wide">Quay lại</span>
+            </Link>
 
             <Footer />
         </main>

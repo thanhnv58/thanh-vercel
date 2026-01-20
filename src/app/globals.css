@@ -2,6 +2,8 @@
 
 html {
   /* scroll-behavior: smooth; - Removed to control via JS for faster speed */
+  scroll-padding-top: 5rem;
+  /* 80px offset for sticky header */
 }
 
 :root {
