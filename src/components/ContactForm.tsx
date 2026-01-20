@@ -29,12 +29,9 @@ export default function ContactForm() {
 
     const onSubmit = async (data: FormData) => {
         try {
-            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz7asUzWvF0-IvSoxKNwN8bUNIdSpw2zPij6lRST0Ojh4UmM_Ndswro20aTktWDh1AVlg/exec";
-
-            // Sending JSON data
-            await fetch(GOOGLE_SCRIPT_URL, {
+            // Call local Next.js API (Proxy)
+            await fetch('/api/contact', {
                 method: "POST",
-                mode: "no-cors",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             });
