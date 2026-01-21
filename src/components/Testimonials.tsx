@@ -30,7 +30,7 @@ export default function Testimonials() {
         <section className="py-20 bg-stone-50 dark:bg-stone-900" id="testimonials">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Khách hàng nói gì?</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Khách hàng nói gì?</h2>
                     <p className="text-stone-600 dark:text-stone-400">Sự hài lòng của bạn là thước đo thành công của chúng tôi</p>
                 </div>
 

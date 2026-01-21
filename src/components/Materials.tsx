@@ -20,9 +20,8 @@ export default function Materials() {
                         <span className="text-stone-500 dark:text-stone-400 font-semibold tracking-wider uppercase text-sm mb-2 block">
                             Chất lượng vượt trội
                         </span>
-                        <h2 className="text-4xl lg:text-5xl font-bold font-serif mb-6 text-stone-900 dark:text-white leading-tight">
-                            Sờ tận tay, <br />
-                            <span className="text-stone-600 dark:text-stone-400">thấy tận mắt</span>
+                        <h2 className="text-2xl md:text-5xl font-bold font-serif mb-6 text-stone-900 dark:text-white leading-tight whitespace-nowrap">
+                            Sờ tận tay, <span className="text-stone-600 dark:text-stone-400">thấy tận mắt</span>
                         </h2>
                         <p className="text-lg text-stone-600 dark:text-stone-300 mb-8 leading-relaxed">
                             Chúng tôi sở hữu xưởng sản xuất trực tiếp với hệ thống máy móc hiện đại, loại bỏ hoàn toàn trung gian để mang lại giá gốc cho khách hàng. Vật liệu cao cấp được tuyển chọn kỹ lưỡng.

@@ -32,7 +32,7 @@ export default function Portfolio() {
         <section className="py-20 bg-white dark:bg-stone-950" id="portfolio">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Năng lực thiết kế</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Năng lực thiết kế</h2>
                     <p className="text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
                         Khám phá những không gian sống đẳng cấp được chúng tôi kiến tạo với tất cả tâm huyết.
                     </p>
@@ -62,7 +62,7 @@ export default function Portfolio() {
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                         <div className="p-12 flex flex-col justify-center">
                             <span className="text-stone-500 dark:text-stone-400 font-semibold mb-2 tracking-wide uppercase text-sm">Real Transformation</span>
-                            <h3 className="text-3xl font-bold font-serif mb-6 text-stone-900 dark:text-white">Từ bản vẽ đến thực tế</h3>
+                            <h3 className="text-xl md:text-3xl lg:text-4xl font-bold font-serif mb-6 text-stone-900 dark:text-white whitespace-nowrap">Từ bản vẽ đến thực tế</h3>
                             <p className="text-stone-600 dark:text-stone-400 mb-8 leading-relaxed">
                                 Chúng tôi cam kết thi công chuẩn xác đến 99% so với bản vẽ thiết kế. Sự tỉ mỉ trong từng chi tiết là tôn chỉ hoạt động của chúng tôi.
                             </p>

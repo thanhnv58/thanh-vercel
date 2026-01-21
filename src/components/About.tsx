@@ -37,7 +37,7 @@ export default function About() {
                         viewport={{ once: true }}
                         className="lg:w-1/2"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-zinc-900 dark:text-zinc-100">
+                        <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-zinc-900 dark:text-zinc-100">
                             Sứ mệnh của chúng tôi
                         </h2>
                         <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">

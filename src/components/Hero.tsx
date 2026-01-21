@@ -59,7 +59,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-stone-50 dark:bg-black">
+        <section className="relative pt-24 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-stone-50 dark:bg-black">
             {/* Background Gradients */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl opacity-30 pointer-events-none">
                 <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-amber-100 rounded-full blur-[100px]" />
@@ -73,10 +73,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <span className="inline-block py-1 px-3 rounded-full bg-stone-100 dark:bg-stone-900 text-stone-600 dark:text-stone-300 text-sm font-semibold mb-6 border border-stone-200 dark:border-stone-800">
-                            ✨ Yêu từ cái nhìn đầu tiên
-                        </span>
-                        <h1 className="max-w-5xl text-5xl lg:text-7xl font-bold font-serif tracking-tight mb-8 text-stone-900 dark:text-white leading-tight">
+                        <h1 className="max-w-5xl text-4xl md:text-5xl lg:text-7xl font-bold font-serif tracking-tight mb-8 text-stone-900 dark:text-white leading-tight">
                             Định hình không gian <br />
                             <span className="text-stone-600 dark:text-stone-400">
                                 Nâng tầm đẳng cấp
@@ -88,7 +85,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="max-w-2xl text-xl text-stone-600 dark:text-stone-400 mb-10 leading-relaxed font-sans"
+                        className="max-w-2xl text-base md:text-lg lg:text-xl text-stone-600 dark:text-stone-400 mb-10 leading-relaxed font-sans"
                     >
                         Chúng tôi kiến tạo những không gian sống đầy cảm xúc, nơi thẩm mỹ tinh tế giao hòa cùng công năng hoàn hảo.
                     </motion.p>
@@ -101,13 +98,13 @@ export default function Hero() {
                     >
                         <Link
                             href="#portfolio"
-                            className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-stone-900 dark:bg-white text-white dark:text-black font-semibold hover:bg-stone-800 dark:hover:bg-stone-200 transition-all shadow-lg hover:shadow-xl"
+                            className="flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base rounded-full bg-stone-900 dark:bg-white text-white dark:text-black font-semibold hover:bg-stone-800 dark:hover:bg-stone-200 transition-all shadow-lg hover:shadow-xl"
                         >
                             Khám phá bộ sưu tập
                         </Link>
                         <Link
                             href="#contact"
-                            className="flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-stone-300 dark:border-stone-700 text-stone-900 dark:text-white font-semibold hover:bg-stone-100 dark:hover:bg-stone-900 transition-all"
+                            className="flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base rounded-full border border-stone-300 dark:border-stone-700 text-stone-900 dark:text-white font-semibold hover:bg-stone-100 dark:hover:bg-stone-900 transition-all"
                         >
                             Tư vấn thiết kế miễn phí
                         </Link>

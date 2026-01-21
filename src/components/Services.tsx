@@ -29,8 +29,8 @@ export default function Services() {
         <section className="py-20 bg-white dark:bg-black" id="services">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Giải pháp trọn gói</h2>
-                    <p className="text-stone-600 dark:text-stone-400">Đáp ứng mọi nhu cầu về không gian sống của bạn</p>
+                    <h2 className="text-3xl lg:text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Giải pháp trọn gói</h2>
+                    <p className="text-base lg:text-lg text-stone-600 dark:text-stone-400">Đáp ứng mọi nhu cầu về không gian sống của bạn</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -46,7 +46,7 @@ export default function Services() {
                             <div className="w-16 h-16 bg-white dark:bg-stone-800 dark:group-hover:bg-stone-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:shadow-md transition-all">
                                 <service.icon className="w-8 h-8 text-stone-900 dark:text-white" strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-2xl font-bold mb-4 text-stone-900 dark:text-white">{service.title}</h3>
+                            <h3 className="text-xl lg:text-2xl font-bold mb-4 text-stone-900 dark:text-white">{service.title}</h3>
                             <p className="text-stone-600 dark:text-stone-400 mb-8 leading-relaxed">
                                 {service.desc}
                             </p>

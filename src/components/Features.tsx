@@ -42,7 +42,7 @@ export default function Features() {
         <section id="features" className="py-24 bg-white dark:bg-black">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                    <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                         Tại sao chọn dịch vụ của chúng tôi?
                     </h2>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400">

@@ -15,7 +15,7 @@ export default function Process() {
         <section className="py-20 bg-stone-50 dark:bg-stone-900" id="process">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Quy trình làm việc</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold font-serif mb-4 text-stone-900 dark:text-white">Quy trình làm việc</h2>
                     <p className="text-stone-600 dark:text-stone-400">Rõ ràng, minh bạch và chuyên nghiệp trong từng khâu</p>
                 </div>
 
